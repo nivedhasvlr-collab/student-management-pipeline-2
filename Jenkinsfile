@@ -4,7 +4,7 @@ pipeline {
         stage ('Checkout') {
             steps {
                 cleanWs()
-                git branch: 'main', url: 'https://github.com'
+                git branch: 'main', url: 'https://github.com/nivedhasvlr-collab/student-management-pipeline-2'
             }
         }
         stage ('Generate Report') {
