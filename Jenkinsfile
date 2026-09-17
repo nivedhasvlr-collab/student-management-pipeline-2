@@ -3,13 +3,14 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/nivedhasvlr-collab/student-management-pipeline-2'
+                cleanWs()
+                git branch: 'main', url: 'https://github.com'
             }
         }
         stage ('Generate Report') {
             steps {
-                // This uses your exact Python launcher path from your cmd screen
-                bat '"C:\\Users\\NIVEDHA\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe" app.py'
+                // This points exactly to the working Python 3.13 directory
+                bat '"C:\\Users\\NIVEDHA\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" app.py'
             }
         }
         stage ('Archive Report') {
