@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-                // This connects Jenkins directly to your NEW second repository
-                git branch: 'main', url: 'https://github.com/nivedhasvlr-collab/student-management-pipeline-2'
+                git branch: 'main', url: 'https://github.com'
             }
         }
         stage ('Generate Report') {
             steps {
-                bat 'python app.py'
+                // This uses your exact Python launcher path from your cmd screen
+                bat '"C:\\Users\\NIVEDHA\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe" app.py'
             }
         }
         stage ('Archive Report') {
